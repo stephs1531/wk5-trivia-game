@@ -9,28 +9,38 @@
     <!-- link to css and bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="assets/css/styles.css">
+    
 
 
     <!-- link to jquery and javascript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Kanit|Righteous" rel="stylesheet">
 
 
 </head>
 <body>
     
     <div class="header-image">
-        <!-- <img src="#" alt=""> -->
+        <img src="assets/images/Trivia_Game_headline.png" alt="">
     </div>
     
     <div id="quizStart">
         <button id="startGame" class="start-button">Start Quiz!</button>
     </div>
     
-    <div id="timeLeft"></div>
-    <div id="quizContent"></div>
-    <div id="submit"></div>
-    <div id="quizResults"></div>
+   <div id="timerContainer"> 
+       <div id="timeLeft"></div>
+    </div>
+    <div id="quizContainer">
+        <div id="quizContent"></div>
+        <div id="submit"></div>
+    </div>
+    
+    <div id="resultsContainer">
+        <h3>How'd You Do?</h3>
+        <div id="quizResults"></div>
+    </div>
 
 </body>
 </html>

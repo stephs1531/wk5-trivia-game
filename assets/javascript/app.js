@@ -72,6 +72,11 @@ for (var i = 0; i < questions.length; i++) {
 //Quiz starts here
 $(document).ready(function() {
 
+    $("#quizContainer").hide();
+    $("#resultsContainer").hide();
+    $("#timeLeft").hide();
+
+
     $("#startGame").click(function() {
         //attach setInterval to variable so it can be stopped
         intervalID = setInterval(decrement, 1000);
@@ -82,6 +87,10 @@ $(document).ready(function() {
         //hide landing page
         $("#startGame").hide();
         console.log("i'm invisible!");
+        $("#quizStart").hide();
+
+        $("#timeLeft").show();
+        $("#quizContainer").show();
         
         //add submit button
         addSubmitButton();
@@ -89,6 +98,8 @@ $(document).ready(function() {
         $("#submit").click(function() {
             console.log("I've been clicked!");
             addResults();
+            $("#quizContainer").hide();
+            $("#resultsContainer").show();
             // startOver();
 
         })
@@ -108,7 +119,7 @@ $(document).ready(function() {
 
     function addQuestions() {
         for (var i = 0; i < questions.length; i++) {
-            $("#quizContent").append(questions[i].question + "<br>");
+            $("#quizContent").append(questions[i].question + "<br>" + "<br>");
             //add radio buttons and give them values and names of x and i
             for (var x = 0; x < questions[i].answers.length; x++) {
                 $("#quizContent").append("<label class='radio-inline'><input value'" + x + "' type='radio' name='" + i + "'>" + questions[i].answers[x] + "</label>" + "<br>");
@@ -162,7 +173,7 @@ $(document).ready(function() {
             }
         }
 
-        $("#quizResults").append("<h3>How'd You Do?</h3>")
+        // $("#quizResults").append("<h3>How'd You Do?</h3>" + "<br>")
         $("#quizResults").append("<p>Correct Answers: " + numCorrect + "</p>")
         $("#quizResults").append("<p>Incorrect Answers: " + numIncorrect + "</p>")
         $("#quizResults").append("<p>Unanswered " + missed + "</p>")
