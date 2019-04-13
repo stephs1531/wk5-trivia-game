@@ -110,6 +110,7 @@ $(document).ready(function() {
             userAnswer = this.value;
             console.log(this.value);
             console.log(userAnswer);
+            //having problems getting value of the index number of this answer choice
         });
 
 
@@ -122,10 +123,11 @@ $(document).ready(function() {
             $("#quizContent").append(questions[i].question + "<br>" + "<br>");
             //add radio buttons and give them values and names of x and i
             for (var x = 0; x < questions[i].answers.length; x++) {
-                $("#quizContent").append("<label class='radio-inline'><input value'" + x + "' type='radio' name='" + i + "'>" + questions[i].answers[x] + "</label>" + "<br>");
+                $("#quizContent").append("<label class='radio-inline'><input value='" + x + "' type='radio' name='" + i + "'>" + questions[i].answers[x] + "</label>" + "<br>");
                 
-                console.log(questions[i].answers[x]);
-                console.log(x);
+                console.log(questions[i].answers[x]);//console.log
+                console.log(x); //console.log index of each answer choice
+                //console.log(i); gives index of the question
             }
 
             //div to add space between questions
